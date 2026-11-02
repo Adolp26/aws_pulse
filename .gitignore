@@ -1,3 +1,48 @@
+# Documentação local
 docs/*
 
+# Segredos e dados da conta AWS (ID da conta, e-mail)
 .env
+budget.json
+trust.json
+perm.json
+
+# Terraform: state guarda IDs e às vezes segredos; o lock file deve ser versionado
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Go: binários compilados (sobem para o S3 pelo Makefile, não para o Git)
+bin/
+dist/
+*.exe
+*.test
+*.out
+coverage.*
+
+# Perfis do pprof e resultados brutos de benchmark
+*.pprof
+*.prof
+
+# Credenciais e chaves
+*.pem
+*.key
+
+# Editor e sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Configuração local do Claude Code
+.claude/settings.local.json
